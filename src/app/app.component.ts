@@ -1,12 +1,42 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {TuiAppearance, TuiButton, TuiInteractiveState, TuiRoot} from "@taiga-ui/core";
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+import {DemoComponent} from './demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    TuiButton,
+  ],
+  template: `
+    <div>
+      <button size="m"
+              tuiButton
+              appearance="outline"
+              [tuiAppearanceState]="disabled"
+              type="button">按钮
+      </button>
+      <button type="button" tuiButton (click.zoneless)="updateTitle()">更新</button>
+    </div>
+  `,
+  styles: `
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  `
 })
 export class AppComponent {
-  title = 'taiga-demo';
+  title = signal('taiga-demo');
+  disabled: TuiInteractiveState | null = null;
+
+  updateTitle() {
+
+    if (this.disabled === null) {
+      this.disabled = "disabled";
+    } else {
+      this.disabled = null;
+    }
+  }
 }
