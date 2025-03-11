@@ -10,11 +10,11 @@ import {DemoComponent} from './demo.component';
   ],
   template: `
     <div>
-      <button size="l"
-              tuiButton
-              appearance="outline"
-              [tuiAppearanceState]="disabled"
-              type="button">按钮
+      <button
+        tuiButton
+        appearance="outline"
+        [tuiAppearanceState]="disabled"
+        type="button">按钮
       </button>
       <button type="button" tuiButton (click)="updateTitle()">更新</button>
     </div>
