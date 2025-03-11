@@ -10,13 +10,13 @@ import {DemoComponent} from './demo.component';
   ],
   template: `
     <div>
-      <button size="m"
+      <button size="l"
               tuiButton
               appearance="outline"
               [tuiAppearanceState]="disabled"
               type="button">按钮
       </button>
-      <button type="button" tuiButton (click.zoneless)="updateTitle()">更新</button>
+      <button type="button" tuiButton (click)="updateTitle()">更新</button>
     </div>
   `,
   styles: `
