@@ -1,9 +1,8 @@
-import {TuiAppearance, TuiButton, TuiInteractiveState, TuiRoot} from "@taiga-ui/core";
+import {TuiButton, TuiInteractiveState} from "@taiga-ui/core";
 import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
-import {DemoComponent} from './demo.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'aio-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     TuiButton,
